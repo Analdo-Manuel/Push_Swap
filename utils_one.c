@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 08:27:43 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/18 09:02:04 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/18 13:03:43 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ char	**ft_split(char *str)
 	p = (char **)malloc(sizeof(char *) * 7168);
 	j = 1;
 	p[0] = "0";
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] > 32 && str[i] < 127)
 	{
 		k = 0;
 		p[j] = (char *)malloc(sizeof(char) * 12);
-		while (str[i] >= '0' && str[i] <= '9')
+		while (str[i] > 32 && str[i] < 127)
 			p[j][k++] = str[i++];
 		p[j][k] = '\0';
 		while (str[i] == ' ' || str[i] == '\t')

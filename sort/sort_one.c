@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   analise_code.c                                     :+:      :+:    :+:   */
+/*   sort_one.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 08:00:48 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/18 13:03:39 by almanuel         ###   ########.fr       */
+/*   Created: 2024/07/18 10:08:20 by almanuel          #+#    #+#             */
+/*   Updated: 2024/07/18 13:03:40 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-static int	ft_strlen(char **str)
+int big_number(t_no *stack_a)
 {
-	int	i;
+	int max;
+	t_no *tmp = stack_a;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-int	ft_test_one(t_pilha *stack_a, char **av, int ac)
-{
-    int i;
-
-    i = 0;
-	if (ac == 2)
-    {
-		av = ft_split(av[1]);
-        ac = ft_strlen(av);
-        i = 1;
-    }
-	if (ft_insert_valuer(stack_a, av, ac, i))
+	max = tmp->num;
+	while (tmp)
 	{
-		printf("Error\n");
-		exit(-1);
+		if (max < tmp->num)
+			max = tmp->num;
+		tmp = tmp->next;
 	}
-	return (0);
+	return (max);
+}
+int radix_digit(int num1, int num2)
+{
+    return (num1 / num2) % 10;
 }

@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:37:56 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/18 09:01:59 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/18 10:19:56 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void			check(t_pilha *stack_a, t_pilha *stack_b);
 
 int				ft_insert_valuer(t_pilha *P, char **av, int ac, int i);
 int				ft_atoi(const char *str);
+int				big_number(t_no *stack_a);
 int				ft_test_one(t_pilha *stack_a, char **av, int ac);
 
 char			**ft_split(char *str);

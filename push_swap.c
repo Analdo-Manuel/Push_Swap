@@ -6,20 +6,25 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 12:37:23 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/18 09:01:54 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/18 13:03:37 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// A funcao verifica se existe algum caracter diferente de 0 ~ 9
+// A funcao verifica se existe algum caracter diferente de 0 ~ 9 ou -
 static int	check_av(char *str)
 {
-	while (*str)
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		if (!(*str >= '0' && *str <= '9'))
+		if (!((str[i] >= '0' && str[i] <= '9' ) || str[i] == '-'))
 			return (1);
-		str++;
+		if (str[i] == '-' && str[i + 1] == '-')
+			return (1);
+		i++;
 	}
 	return (0);
 }

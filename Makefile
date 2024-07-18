@@ -3,6 +3,7 @@ CFLAGS = -Wall -Wextra -Werror
 SOURCE = 	push_swap.c analise_code.c				\
 			rules_one.c rules_two.c rules_three.c 	\
 			libft/ft_atoi.c operation_two.c			\
+			sort/sort_one.c							\
 			utils_one.c main.c
 
 all:
