@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:37:56 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/18 10:19:56 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/19 17:16:56 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 typedef struct s_no
 {
 	int			num;
+	int			operacao;
+	int			target;
 	struct s_no	*next;
 }				t_no;
 typedef struct s_pilha
@@ -46,7 +48,9 @@ void			swap_rr(t_pilha *stack_a, t_pilha *stack_b);
 void			swap_rra(t_pilha *stack_a);
 void			swap_rrb(t_pilha *stack_b);
 void			swap_rrr(t_pilha *stack_a, t_pilha *stack_b);
+
 void			check(t_pilha *stack_a, t_pilha *stack_b);
+void			target(t_pilha *stack_a, t_pilha *stack_b);
 
 int				ft_insert_valuer(t_pilha *P, char **av, int ac, int i);
 int				ft_atoi(const char *str);

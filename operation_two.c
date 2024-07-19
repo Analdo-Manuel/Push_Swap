@@ -6,13 +6,13 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 11:35:17 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/18 11:19:20 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/19 17:16:56 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	verficador(t_no *stack_a)
+int	verficador(t_no *stack_a)
 {
 	t_no	*tmp;
 

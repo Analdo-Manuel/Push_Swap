@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 08:27:43 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/18 13:03:43 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/19 17:16:57 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	ft_push(t_pilha *P, int dado)
 		return ;
 	swp->num = dado;
 	swp->next = P->no;
+	swp->operacao = 0;
+	swp->target = 0;
 	P->no = swp;
 	P->size++;
 }
