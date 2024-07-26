@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_one.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kicuma <kicuma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 08:27:43 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/19 17:16:57 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/24 00:41:26 by kicuma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_new_pilha(t_pilha *P)
 	P->size = 0;
 	P->count = 0;
 }
+
 // Empilhar ou criar uma pilha
 void	ft_push(t_pilha *P, int dado)
 {
@@ -29,11 +30,10 @@ void	ft_push(t_pilha *P, int dado)
 		return ;
 	swp->num = dado;
 	swp->next = P->no;
-	swp->operacao = 0;
-	swp->target = 0;
 	P->no = swp;
 	P->size++;
 }
+
 // Desempilhar ou remover uma pilha
 void	ft_pop(t_pilha *P)
 {
@@ -44,6 +44,7 @@ void	ft_pop(t_pilha *P)
 	free(rm);
 	P->size--;
 }
+
 // Split adaptado para ler o primeiro argumento
 char	**ft_split(char *str)
 {

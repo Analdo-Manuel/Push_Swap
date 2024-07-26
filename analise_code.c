@@ -24,15 +24,15 @@ static int	ft_strlen(char **str)
 
 int	ft_test_one(t_pilha *stack_a, char **av, int ac)
 {
-    int i;
+	int	i;
 
-    i = 0;
+	i = 0;
 	if (ac == 2)
-    {
+	{
 		av = ft_split(av[1]);
-        ac = ft_strlen(av);
-        i = 1;
-    }
+		ac = ft_strlen(av);
+		i = 1;
+	}
 	if (ft_insert_valuer(stack_a, av, ac, i))
 	{
 		printf("Error\n");

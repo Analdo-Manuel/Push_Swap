@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kicuma <kicuma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 12:37:23 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/19 10:40:57 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/21 21:13:35 by kicuma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	check_av(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!((str[i] >= '0' && str[i] <= '9' ) || str[i] == '-'))
+		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == '-'))
 			return (1);
 		if (str[i] == '-' && str[i + 1] == '-')
 			return (1);
@@ -28,6 +28,7 @@ static int	check_av(char *str)
 	}
 	return (0);
 }
+
 // A funcao verifica se existe algum numero repetido
 static int	check_repeated(t_no *stack_a, int num)
 {
@@ -42,6 +43,7 @@ static int	check_repeated(t_no *stack_a, int num)
 	}
 	return (0);
 }
+
 int	ft_insert_valuer(t_pilha *p, char **av, int ac, int v)
 {
 	int	i;

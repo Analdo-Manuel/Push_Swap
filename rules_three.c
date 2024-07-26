@@ -28,10 +28,29 @@ void	swap_stacks(t_pilha *P)
 
 void	swap_rrr(t_pilha *stack_a, t_pilha *stack_b)
 {
+	t_no	*tmp1;
+	t_no	*tmp2;
 	if (!(stack_a || stack_a->no || stack_b || stack_b->no))
 		return ;
-	swap_rra(stack_a);
-	swap_rrb(stack_b);
+	tmp1 = stack_a->no;
+	while (tmp1->next)
+	{
+		tmp2 = tmp1;
+		tmp1 = tmp1->next;
+	}
+	tmp2->next = NULL;
+	tmp1->next = stack_a->no;
+	stack_a->no = tmp1;
+	
+	tmp1 = stack_b->no;
+	while (tmp1->next)
+	{
+		tmp2 = tmp1;
+		tmp1 = tmp1->next;
+	}
+	tmp2->next = NULL;
+	tmp1->next = stack_b->no;
+	stack_b->no = tmp1;
 	write(1, "rrr\n", 4);
 	stack_a->count++;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rules_one.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kicuma <kicuma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 09:13:07 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/17 07:51:46 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/21 01:08:24 by kicuma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	swap_ss(t_pilha *stack_a, t_pilha *stack_b)
 {
 	if (!stack_a || !stack_a->no || !stack_b || !stack_b->no)
 		return ;
-	swap_sa(stack_a);
-	swap_sb(stack_b);
+	swap_stacks(stack_a);
+	swap_stacks(stack_b);
 	write(1, "ss\n", 3);
 	stack_a->count++;
 }
