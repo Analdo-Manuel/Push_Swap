@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rules_two.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kicuma <kicuma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 09:14:07 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/24 00:41:48 by kicuma           ###   ########.fr       */
+/*   Updated: 2024/07/28 20:55:46 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	swap_rr(t_pilha *stack_a, t_pilha *stack_b)
 {
 	t_no	*tmp1;
 	t_no	*tmp2;
-	
+
 	if (!stack_a || !stack_a->no || !stack_b || !stack_b->no)
 		return ;
 	tmp1 = stack_a->no;

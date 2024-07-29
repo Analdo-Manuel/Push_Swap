@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 23:18:52 by kicuma            #+#    #+#             */
-/*   Updated: 2024/07/25 16:37:00 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/28 21:33:08 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	sort_stack_b(t_pilha *stack_a, t_pilha *stack_b, t_no *a, int i, int j)
 		else
 			while (i--)
 				swap_rrb(stack_b);
-	}	
+	}
 	if (j > 0)
 	{
 		if (a->move1 == 0)

@@ -5,7 +5,7 @@ SOURCE = 	push_swap.c analise_code.c				\
 			libft/ft_atoi.c operation_two.c			\
 			sort/sort_one.c	sort/sort_two.c			\
 			sort/sort_treen.c sort/sort_four.c		\
-			utils_one.c main.c
+			sort/sort_five.c utils_one.c main.c
 
 all:
 	@$(CC) $(CFLAGS) -C $(SOURCE) -o push_swap

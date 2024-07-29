@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 11:35:17 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/25 16:46:23 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/28 22:38:22 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ static void	verficador3(t_pilha *stack_a)
 		return ;
 	}
 	tmp = stack_a->no;
-	if (tmp->num > tmp->next->num && tmp->num > tmp->next->next->num)
+	if (tmp->num > tmp->next->num
+		&& tmp->num > tmp->next->next->num)
 		swap_ra(stack_a);
-	else if (tmp->num < tmp->next->num 
+	else if (tmp->num < tmp->next->num
 		&& tmp->next->num > tmp->next->next->num)
 		swap_rra(stack_a);
 	tmp = stack_a->no;
@@ -61,9 +62,6 @@ void	check(t_pilha *stack_a, t_pilha *stack_b)
 			custo(stack_a);
 			sort_stack_bo(stack_a, stack_b);
 		}
-		target(stack_a, stack_b);
-		operacoes_a(stack_a);
-		custo(stack_a);
 		verficador3(stack_a);
 		sort_b(stack_a, stack_b);
 		while (verficador(stack_a->no))

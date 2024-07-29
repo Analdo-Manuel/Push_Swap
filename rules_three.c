@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 09:13:39 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/17 07:53:51 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/07/28 20:57:21 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	swap_rrr(t_pilha *stack_a, t_pilha *stack_b)
 {
 	t_no	*tmp1;
 	t_no	*tmp2;
+
 	if (!(stack_a || stack_a->no || stack_b || stack_b->no))
 		return ;
 	tmp1 = stack_a->no;
@@ -41,7 +42,6 @@ void	swap_rrr(t_pilha *stack_a, t_pilha *stack_b)
 	tmp2->next = NULL;
 	tmp1->next = stack_a->no;
 	stack_a->no = tmp1;
-	
 	tmp1 = stack_b->no;
 	while (tmp1->next)
 	{

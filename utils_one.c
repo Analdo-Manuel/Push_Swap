@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_one.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kicuma <kicuma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 08:27:43 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/24 00:41:26 by kicuma           ###   ########.fr       */
+/*   Updated: 2024/07/28 23:25:26 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,30 @@ void	ft_new_pilha(t_pilha *P)
 	P->count = 0;
 }
 
+// inicializar uma NÓ
+t_no	*new(void)
+{
+	t_no	*new;
+
+	new = (t_no *) malloc(sizeof(t_no));
+	if (!new)
+		return (NULL);
+	new->target = 0;
+	new->custo = 0;
+	new->move1 = 0;
+	new->move = 0;
+	new->num = 0;
+	new->op = 0;
+	new->next = NULL;
+	return (new);
+}
+
 // Empilhar ou criar uma pilha
 void	ft_push(t_pilha *P, int dado)
 {
 	t_no	*swp;
 
-	swp = (t_no *)malloc(sizeof(t_no));
+	swp = new();
 	if (!swp)
 		return ;
 	swp->num = dado;
