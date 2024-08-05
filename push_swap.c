@@ -3,68 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kicuma <kicuma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 12:37:23 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/21 21:13:35 by kicuma           ###   ########.fr       */
+/*   Created: 2024/08/05 02:47:56 by almanuel          #+#    #+#             */
+/*   Updated: 2024/08/05 04:03:17 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// A funcao verifica se existe algum caracter diferente de 0 ~ 9 ou -
-static int	check_av(char *str)
+int	main(int ac, char **av)
 {
-	int	i;
+	t_pilha	stack_a;
+	t_pilha	stack_b;
 
-	i = 0;
-	while (str[i])
+	if (ac > 1)
 	{
-		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == '-'))
-			return (1);
-		if (str[i] == '-' && str[i + 1] == '-')
-			return (1);
-		i++;
+		if (av[1][0] == '\0' || (av[1][0] == '-'
+			&& (av[1][1] < '0' || av[1][1] > '9')))
+		{
+			write(2, "Error\n", 6);
+			exit(1);
+		}
+		new_stack(&stack_a);
+		new_stack(&stack_b);
+		if (test_two(&stack_a, av, ac))
+			return (0);
+		sort_all(&stack_a, &stack_b);
+		while (stack_a.no)
+			ft_pop(&stack_a);
+		while (stack_b.no)
+			ft_pop(&stack_b);
+		free(stack_a.no);
+		free(stack_b.no);
 	}
-	return (0);
-}
-
-// A funcao verifica se existe algum numero repetido
-static int	check_repeated(t_no *stack_a, int num)
-{
-	t_no	*tmp;
-
-	tmp = stack_a;
-	while (tmp)
-	{
-		if (tmp->num == num)
-			return (1);
-		tmp = tmp->next;
-	}
-	return (0);
-}
-
-int	ft_insert_valuer(t_pilha *p, char **av, int ac, int v)
-{
-	int	i;
-
-	i = ac;
-	while (--i > 0)
-		if (check_av(av[i]))
-			return (1);
-	i = ac;
-	while (--i > 0)
-	{
-		if (check_repeated(p->no, ft_atoi(av[i])))
-			return (1);
-		ft_push(p, ft_atoi(av[i]));
-	}
-	if (v == 1)
-	{
-		i = ac;
-		while (av[i])
-			free(av[i--]);
-		free(av);
-	}
+	exit(1);
 	return (0);
 }

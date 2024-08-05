@@ -6,13 +6,13 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 09:14:07 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/28 20:55:46 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/05 03:45:48 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_ra(t_pilha *stack_a)
+void	ra(t_pilha *stack_a)
 {
 	t_no	*tmp1;
 	t_no	*tmp2;
@@ -30,7 +30,7 @@ void	swap_ra(t_pilha *stack_a)
 	stack_a->count++;
 }
 
-void	swap_rb(t_pilha *stack_b)
+void	rb(t_pilha *stack_b)
 {
 	t_no	*tmp1;
 	t_no	*tmp2;
@@ -48,7 +48,7 @@ void	swap_rb(t_pilha *stack_b)
 	stack_b->count++;
 }
 
-void	swap_rr(t_pilha *stack_a, t_pilha *stack_b)
+void	rr(t_pilha *stack_a, t_pilha *stack_b)
 {
 	t_no	*tmp1;
 	t_no	*tmp2;
@@ -73,7 +73,7 @@ void	swap_rr(t_pilha *stack_a, t_pilha *stack_b)
 	stack_a->count++;
 }
 
-void	swap_rra(t_pilha *stack_a)
+void	rra(t_pilha *stack_a)
 {
 	t_no	*tmp1;
 	t_no	*tmp2;
@@ -93,7 +93,7 @@ void	swap_rra(t_pilha *stack_a)
 	stack_a->count++;
 }
 
-void	swap_rrb(t_pilha *stack_b)
+void	rrb(t_pilha *stack_b)
 {
 	t_no	*tmp1;
 	t_no	*tmp2;

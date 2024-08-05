@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 21:01:33 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/28 23:06:15 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/05 02:45:30 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ static int	loop_small(t_pilha *st_a, t_no *b, t_no *tmp, int small)
 			small = tmp->next->num;
 			if (i <= (st_a->size / 2))
 			{
-				b->move = 1;
+				b->up = 1;
 				r = i;
 			}
 			else
 			{
-				b->move = 0;
+				b->up = 0;
 				r = st_a->size - i;
 			}
 		}
@@ -67,7 +67,7 @@ static int	small_index(t_no *b, t_pilha *st_a)
 	return (loop_small(st_a, b, tmp, small));
 }
 
-static void	loop_target(t_pilha *st_a, t_no *a, t_no *b, int *k, int j)
+static void	target_value_a(t_pilha *st_a, t_no *a, t_no *b, int j)
 {
 	int	i;
 
@@ -80,14 +80,14 @@ static void	loop_target(t_pilha *st_a, t_no *a, t_no *b, int *k, int j)
 			if (i <= (st_a->size / 2))
 			{
 				b->target = i;
-				b->move = 1;
-				*k = 0;
+				b->up = 1;
+				b->conf = 1;
 			}
 			else
 			{
 				b->target = st_a->size - i;
-				b->move = 0;
-				*k = 0;
+				b->up = 0;
+				b->conf = 1;
 			}
 		}
 		i++;
@@ -95,18 +95,16 @@ static void	loop_target(t_pilha *st_a, t_no *a, t_no *b, int *k, int j)
 	}
 }
 
-void	target_b(t_pilha *stack_b, t_pilha *stack_a)
+void	target_a(t_pilha *stack_b, t_pilha *stack_a)
 {
 	t_no	*a;
 	t_no	*b;
 	int		j;
-	int		k;
 
 	b = stack_b->no;
 	a = stack_a->no;
-	k = 1;
 	j = big_number(a);
-	loop_target(stack_a, a, b, &k, j);
-	if (k == 1)
+	target_value_a(stack_a, a, b, j);
+	if (b->conf == 0)
 		b->target = small_index(b, stack_a);
 }

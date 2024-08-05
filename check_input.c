@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 20:37:05 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/28 22:36:54 by almanuel         ###   ########.fr       */
+/*   Created: 2024/07/17 08:00:48 by almanuel          #+#    #+#             */
+/*   Updated: 2024/08/05 02:45:46 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+static int	ft_strlen(char **str)
 {
-	t_pilha	stack_a;
-	t_pilha	stack_b;
+	int	i;
 
-	if (ac > 1)
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int	test_two(t_pilha *stack_a, char **av, int ac)
+{
+	int	i;
+
+	i = 0;
+	if (ac == 2)
 	{
-		ft_new_pilha(&stack_a);
-		ft_new_pilha(&stack_b);
-		if (ft_test_one(&stack_a, av, ac))
-			return (0);
-		check(&stack_a, &stack_b);
-		while (stack_a.no)
-			ft_pop(&stack_a);
-		while (stack_b.no)
-			ft_pop(&stack_b);
-		free(stack_a.no);
-		free(stack_b.no);
+		av = ft_split(av[1]);
+		ac = ft_strlen(av);
+		i = 1;
 	}
-	exit(0);
+	if (insert_valuer(stack_a, av, ac, i))
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	return (0);
 }

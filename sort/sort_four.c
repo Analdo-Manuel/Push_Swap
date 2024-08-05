@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 12:05:46 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/28 22:45:01 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/05 04:35:38 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,69 +26,69 @@ static t_no	*custo_smoll(t_no *a)
 	return (tmp);
 }
 
-static void	op_doubles(t_pilha *a, t_pilha *b, t_no *t, int *x, int *y)
+static void	op_simultaneous(t_pilha *a, t_pilha *b, t_no *t)
 {
 	int	i;
 	int	j;
 
-	i = *x;
-	j = *y;
-	if (t->move == t->move1)
+	i = t->target;
+	j = t->operation;
+	if (t->up == 0)
 	{
-		if (t->move == 0)
+		while (i && j)
 		{
-			while (i && j)
-			{
-				swap_rr(a, b);
-				i--;
-				j--;
-			}
-		}
-		else
-		{
-			while (i && j)
-			{
-				swap_rrr(a, b);
-				i--;
-				j--;
-			}
+			rr(a, b);
+			i--;
+			j--;
 		}
 	}
-	*x = i;
-	*y = j;
+	else
+	{
+		while (i && j)
+		{
+			rrr(a, b);
+			i--;
+			j--;
+		}
+	}
+	t->target = i;
+	t->operation = j;
 }
 
-// Mandar todos os valorer da stack_a para stack_b
-void	sort_stack_bo(t_pilha *stack_a, t_pilha *stack_b)
+static void	operation_doubles(t_pilha *a, t_pilha *b, t_no *t)
 {
-	int		i;
-	int		j;
+	if (t->up == t->low)
+	{
+		op_simultaneous(a, b, t);
+	}
+}
+
+void	sort_stack_b(t_pilha *stack_a, t_pilha *stack_b)
+{
 	t_no	*a;
 
 	a = stack_a->no;
 	a = custo_smoll(a);
-	i = a->target;
-	j = a->op;
-	op_doubles(stack_a, stack_b, a, &i, &j);
-	sort_stack_b(stack_a, stack_b, a, i, j);
+	operation_doubles(stack_a, stack_b, a);
+	operation_simple(stack_a, stack_b, a);
 }
 
-void	sort_b(t_pilha *stack_a, t_pilha *stack_b)
+void	sort_stack_a(t_pilha *stack_a, t_pilha *stack_b)
 {
 	t_no	*b;
 	int		i;
 
 	while (stack_b->no)
 	{
-		target_b(stack_b, stack_a);
+		target_a(stack_b, stack_a);
 		b = stack_b->no;
 		i = b->target;
-		if (b->move == 1)
+		if (b->up == 1)
 			while (i--)
-				swap_ra(stack_a);
+				ra(stack_a);
 		else
 			while (i--)
-				swap_rra(stack_a);
-		swap_pa(stack_a, stack_b);
+				rra(stack_a);
+		pa(stack_a, stack_b);
 	}
 }

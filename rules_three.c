@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 09:13:39 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/28 20:57:21 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/05 03:45:29 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	swap_stacks(t_pilha *P)
 	P->no = tmp2;
 }
 
-void	swap_rrr(t_pilha *stack_a, t_pilha *stack_b)
+void	rrr(t_pilha *stack_a, t_pilha *stack_b)
 {
 	t_no	*tmp1;
 	t_no	*tmp2;

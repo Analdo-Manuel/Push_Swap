@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:37:56 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/28 21:44:56 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/05 03:45:03 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ typedef struct s_no
 {
 	int			num;
 	int			target;
-	int			op;
+	int			operation;
 	int			custo;
-	int			move;
-	int			move1;
+	int			up;
+	int			low;
+	int			conf;
 	struct s_no	*next;
 }				t_no;
 typedef struct s_pilha
@@ -35,37 +36,36 @@ typedef struct s_pilha
 	int			count;
 }				t_pilha;
 
-void	ft_new_pilha(t_pilha *P);
+void	new_stack(t_pilha *P);
 void	ft_push(t_pilha *P, int dado);
 void	ft_pop(t_pilha *P);
 void	swap_stacks(t_pilha *P);
 
-void	swap_sa(t_pilha *stack_a);
-void	swap_sb(t_pilha *stack_b);
-void	swap_ss(t_pilha *stack_a, t_pilha *stack_b);
-void	swap_pa(t_pilha *stack_a, t_pilha *stack_b);
-void	swap_pb(t_pilha *stack_a, t_pilha *stack_b);
-void	swap_ra(t_pilha *stack_a);
-void	swap_rb(t_pilha *stack_b);
-void	swap_rr(t_pilha *stack_a, t_pilha *stack_b);
-void	swap_rra(t_pilha *stack_a);
-void	swap_rrb(t_pilha *stack_b);
-void	swap_rrr(t_pilha *stack_a, t_pilha *stack_b);
-void	check(t_pilha *stack_a, t_pilha *stack_b);
+void	sa(t_pilha *stack_a);
+void	sb(t_pilha *stack_b);
+void	ss(t_pilha *stack_a, t_pilha *stack_b);
+void	pa(t_pilha *stack_a, t_pilha *stack_b);
+void	pb(t_pilha *stack_a, t_pilha *stack_b);
+void	ra(t_pilha *stack_a);
+void	rb(t_pilha *stack_b);
+void	rr(t_pilha *stack_a, t_pilha *stack_b);
+void	rra(t_pilha *stack_a);
+void	rrb(t_pilha *stack_b);
+void	rrr(t_pilha *stack_a, t_pilha *stack_b);
+void	sort_all(t_pilha *stack_a, t_pilha *stack_b);
 
 void	target(t_pilha *stack_a, t_pilha *stack_b);
-void	operacoes_a(t_pilha *stack_a);
+void	operation_number(t_pilha *stack_a);
 void	custo(t_pilha *stack_a);
-void	sort_stack_b(t_pilha *stack_a, t_pilha *stack_b, t_no *a, int i, int j);
+void	operation_simple(t_pilha *stack_a, t_pilha *stack_b, t_no *a);
 void	orden_b(t_pilha *stack_b);
-void	orden_a(t_pilha *stack_a);
-void	sort_b(t_pilha *stack_a, t_pilha *stack_b);
-void	sort_stack_bo(t_pilha *stack_a, t_pilha *stack_b);
-void	target_b(t_pilha *stack_b, t_pilha *stack_a);
+void	small_no(t_pilha *stack_a);
+void	sort_stack_a(t_pilha *stack_a, t_pilha *stack_b);
+void	sort_stack_b(t_pilha *stack_a, t_pilha *stack_b);
+void	target_a(t_pilha *stack_b, t_pilha *stack_a);
 
-int		ft_insert_valuer(t_pilha *P, char **av, int ac, int i);
-int		ft_atoi(const char *str);
-int		ft_test_one(t_pilha *stack_a, char **av, int ac);
+int		insert_valuer(t_pilha *P, char **av, int ac, int i);
+int		test_two(t_pilha *stack_a, char **av, int ac);
 
 char	**ft_split(char *str);
 #endif

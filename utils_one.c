@@ -6,14 +6,14 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 08:27:43 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/28 23:25:26 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/05 02:46:01 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // inicializar uma pilha
-void	ft_new_pilha(t_pilha *P)
+void	new_stack(t_pilha *P)
 {
 	P->no = NULL;
 	P->size = 0;
@@ -30,10 +30,11 @@ t_no	*new(void)
 		return (NULL);
 	new->target = 0;
 	new->custo = 0;
-	new->move1 = 0;
-	new->move = 0;
+	new->low = 0;
+	new->up = 0;
 	new->num = 0;
-	new->op = 0;
+	new->operation = 0;
+	new->conf = 0;
 	new->next = NULL;
 	return (new);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rules_one.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kicuma <kicuma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 09:13:07 by almanuel          #+#    #+#             */
-/*   Updated: 2024/07/21 01:08:24 by kicuma           ###   ########.fr       */
+/*   Updated: 2024/08/05 03:44:28 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_sa(t_pilha *stack_a)
+void	sa(t_pilha *stack_a)
 {
 	if (!stack_a || !stack_a->no)
 		return ;
@@ -21,7 +21,7 @@ void	swap_sa(t_pilha *stack_a)
 	stack_a->count++;
 }
 
-void	swap_sb(t_pilha *stack_b)
+void	sb(t_pilha *stack_b)
 {
 	if (!stack_b || !stack_b->no)
 		return ;
@@ -30,7 +30,7 @@ void	swap_sb(t_pilha *stack_b)
 	stack_b->count++;
 }
 
-void	swap_ss(t_pilha *stack_a, t_pilha *stack_b)
+void	ss(t_pilha *stack_a, t_pilha *stack_b)
 {
 	if (!stack_a || !stack_a->no || !stack_b || !stack_b->no)
 		return ;
@@ -40,7 +40,7 @@ void	swap_ss(t_pilha *stack_a, t_pilha *stack_b)
 	stack_a->count++;
 }
 
-void	swap_pa(t_pilha *stack_a, t_pilha *stack_b)
+void	pa(t_pilha *stack_a, t_pilha *stack_b)
 {
 	if (stack_b->size == 0)
 		return ;
@@ -50,7 +50,7 @@ void	swap_pa(t_pilha *stack_a, t_pilha *stack_b)
 	stack_a->count++;
 }
 
-void	swap_pb(t_pilha *stack_a, t_pilha *stack_b)
+void	pb(t_pilha *stack_a, t_pilha *stack_b)
 {
 	if (stack_a->size == 0)
 		return ;
