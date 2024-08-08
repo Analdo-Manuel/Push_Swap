@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operation.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: analdo <analdo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 11:35:17 by almanuel          #+#    #+#             */
-/*   Updated: 2024/08/05 03:44:51 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/08 16:55:03 by analdo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,25 @@ static void	checker_3(t_pilha *stack_a)
 
 void	sort_all(t_pilha *stack_a, t_pilha *stack_b)
 {
-	if (stack_a->size <= 3)
-		checker_3(stack_a);
-	else
+	if (checker(stack_a->no))
 	{
-		pb(stack_a, stack_b);
-		pb(stack_a, stack_b);
-		while (stack_a->size > 3)
+		if (stack_a->size <= 3)
+			checker_3(stack_a);
+		else
 		{
-			target(stack_a, stack_b);
-			operation_number(stack_a);
-			custo(stack_a);
-			sort_stack_b(stack_a, stack_b);
+			pb(stack_a, stack_b);
+			pb(stack_a, stack_b);
+			while (stack_a->size > 3)
+			{
+				target(stack_a, stack_b);
+				operation_number(stack_a);
+				custo(stack_a);
+				sort_stack_b(stack_a, stack_b);
+			}
+			checker_3(stack_a);
+			sort_stack_a(stack_a, stack_b);
+			while (checker(stack_a->no))
+				small_no(stack_a);
 		}
-		checker_3(stack_a);
-		sort_stack_a(stack_a, stack_b);
-		while (checker(stack_a->no))
-			small_no(stack_a);
 	}
 }

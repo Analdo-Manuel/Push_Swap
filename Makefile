@@ -24,10 +24,10 @@ $(NAME): $(OBJ)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o
-	rm -f sort/*.o
+	rm -f $(OBJ)
+	rm -f sort/$(OBJ)
 
-fclear: clean
+fclean: clean
 	rm -f $(NAME)
 
-re:	fclear all
+re: fclean all
