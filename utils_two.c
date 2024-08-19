@@ -43,7 +43,7 @@ static	int	check_repeated(t_no *stack_a, int num)
 	t_no	*tmp;
 
 	tmp = stack_a;
-	if (!(num > -2147483647 && num < 2147483646))
+	if (!(num > -2147483648 && num <= 2147483647))
 		return (1);
 	while (tmp)
 	{
