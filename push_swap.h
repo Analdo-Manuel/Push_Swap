@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:37:56 by almanuel          #+#    #+#             */
-/*   Updated: 2024/08/05 03:45:03 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:06:31 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ void	small_no(t_pilha *stack_a);
 void	sort_stack_a(t_pilha *stack_a, t_pilha *stack_b);
 void	sort_stack_b(t_pilha *stack_a, t_pilha *stack_b);
 void	target_a(t_pilha *stack_b, t_pilha *stack_a);
+void	test_two(t_pilha *stack_a, char **av, int ac);
 
 int		insert_valuer(t_pilha *P, char **av, int ac, int i);
-int		test_two(t_pilha *stack_a, char **av, int ac);
 
 char	**ft_split(char *str);
 #endif

@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 08:00:48 by almanuel          #+#    #+#             */
-/*   Updated: 2024/08/05 02:45:46 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:05:40 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,22 @@ static int	ft_strlen(char **str)
 	return (i);
 }
 
-int	test_two(t_pilha *stack_a, char **av, int ac)
+static void		free_av_st(t_pilha *stack_a, char	**av)
+{
+	int i;
+
+	i = 1;
+	while (av[i])
+		free(av[i++]);
+	free(av);
+	if (stack_a)
+	{
+		while (stack_a->no)
+			ft_pop(stack_a);
+		free(stack_a->no);
+	}
+}
+void	test_two(t_pilha *stack_a, char **av, int ac)
 {
 	int	i;
 
@@ -36,7 +51,8 @@ int	test_two(t_pilha *stack_a, char **av, int ac)
 	if (insert_valuer(stack_a, av, ac, i))
 	{
 		write(2, "Error\n", 6);
+		if (i == 1)
+			free_av_st(stack_a, av);
 		exit(1);
 	}
-	return (0);
 }

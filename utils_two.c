@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 12:37:23 by almanuel          #+#    #+#             */
-/*   Updated: 2024/08/05 04:04:48 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/20 15:10:03 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	insert_valuer(t_pilha *p, char **av, int ac, int v)
 	if (v == 1)
 	{
 		i = ac;
-		while (av[i])
+		while (i)
 			free(av[i--]);
 		free(av);
 	}
