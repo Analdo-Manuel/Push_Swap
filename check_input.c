@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 08:00:48 by almanuel          #+#    #+#             */
-/*   Updated: 2024/08/20 16:05:40 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:37:10 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,15 @@ void	test_two(t_pilha *stack_a, char **av, int ac)
 		write(2, "Error\n", 6);
 		if (i == 1)
 			free_av_st(stack_a, av);
+		else
+		{
+			if (stack_a)
+			{
+				while (stack_a->no)
+					ft_pop(stack_a);
+				free(stack_a->no);
+			}
+		}
 		exit(1);
 	}
 }
