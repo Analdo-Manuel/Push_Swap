@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 12:37:23 by almanuel          #+#    #+#             */
-/*   Updated: 2024/08/20 15:10:03 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:21:51 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,8 @@
 static	int	check_av(char *str)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	while (str[j])
-		j++;
-	if (j > 10)
-		return (1);
 	while (str[i])
 	{
 		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == '-'))
