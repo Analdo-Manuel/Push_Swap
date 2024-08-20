@@ -37,13 +37,13 @@ static	int	check_av(char *str)
 	return (0);
 }
 
-// A funcao verifica se existe algum numero repetido
-static	int	check_repeated(t_no *stack_a, int num)
+// A funcao verifica se existe algum numero repetido & max_int
+static	int	check_repeated(t_no *stack_a, long num)
 {
 	t_no	*tmp;
 
 	tmp = stack_a;
-	if (!(num > -2147483648 && num <= 2147483647))
+	if (num < -2147483648 || num > 2147483647)
 		return (1);
 	while (tmp)
 	{
@@ -54,11 +54,11 @@ static	int	check_repeated(t_no *stack_a, int num)
 	return (0);
 }
 
-static	int	ft_atoi(const char *str)
+static	long	ft_atoi(const char *str)
 {
 	int	i;
 	int	b;
-	int	c;
+	long	c;
 
 	i = 0;
 	b = 1;

@@ -862,7 +862,7 @@ if [ $S == "OK" ]; then
 else
 	printf "${RED}6.[KO]${DEF_COLOR}";
 fi
-
+2147483647 2
 ARG="2 1 3";
 N=$(./push_swap $ARG | wc -l)
 if [ $N -lt 4 ]; then
