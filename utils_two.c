@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 12:37:23 by almanuel          #+#    #+#             */
-/*   Updated: 2024/08/20 17:21:51 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:43:00 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ static	int	check_repeated(t_no *stack_a, long num)
 
 static	long	ft_atoi(const char *str)
 {
-	int	i;
-	int	b;
+	int		i;
+	int		b;
 	long	c;
 
 	i = 0;

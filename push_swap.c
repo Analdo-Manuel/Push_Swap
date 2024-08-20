@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 02:47:56 by almanuel          #+#    #+#             */
-/*   Updated: 2024/08/20 16:32:20 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:41:54 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	free_stack(t_pilha stack_a, t_pilha stack_b)
 	free(stack_a.no);
 	free(stack_b.no);
 }
-static void	checker(char **av)
+
+static	void	checker(char **av)
 {
 	int	i;
 
@@ -33,13 +34,12 @@ static void	checker(char **av)
 		exit(1);
 	}
 	while (av[1][i] == ' ' || av[1][i] == '\t')
-			i++;
+		i++;
 	if (av[1][i] == '\0')
 	{
 		write(2, "Error\n", 6);
 		exit(1);
 	}
-	
 }
 
 int	main(int ac, char **av)

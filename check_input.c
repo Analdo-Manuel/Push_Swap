@@ -6,7 +6,7 @@
 /*   By: almanuel <almanuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 08:00:48 by almanuel          #+#    #+#             */
-/*   Updated: 2024/08/20 16:37:10 by almanuel         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:40:19 by almanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static int	ft_strlen(char **str)
 	return (i);
 }
 
-static void		free_av_st(t_pilha *stack_a, char	**av)
+static void	free_av_st(t_pilha *stack_a, char	**av)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (av[i])
@@ -37,6 +37,7 @@ static void		free_av_st(t_pilha *stack_a, char	**av)
 		free(stack_a->no);
 	}
 }
+
 void	test_two(t_pilha *stack_a, char **av, int ac)
 {
 	int	i;
